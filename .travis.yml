@@ -6,7 +6,6 @@ addons:
 install:
   - curl --silent --location https://github.com/pgroonga/pgroonga/raw/master/data/travis/setup.sh | sh
 before_script:
-  - psql -U postgres -d template1 -c 'CREATE EXTENSION pgroonga;'
   - psql -U postgres -c 'CREATE DATABASE pgroonga_test;'
 script:
   - psql -d pgroonga_test -f test.sql
