@@ -26,7 +26,7 @@ SET enable_indexscan = on;
 SET enable_bitmapscan = on;
 SELECT * FROM memos WHERE content LIKE '%groonga%';
 
-CREATE INDEX pgroonga_content_index
+CREATE INDEX pgroonga_content_like_index
           ON memos
        USING pgroonga (content)
         WITH (tokenizer='TokenBigramSplitSymbolAlphaDigit',
